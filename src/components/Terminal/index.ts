@@ -89,7 +89,6 @@ class Terminal{
     }
 
     keydown = (event: any) => {
-        console.log(event)
         switch(event.keyCode){
             case 13: 
                 this.addTextToResult(this.command);
