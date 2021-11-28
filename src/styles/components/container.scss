@@ -1,0 +1,19 @@
+.socials-container{
+    display: flex;
+    flex-direction: row;
+
+    span{
+        margin-right: 10px;
+    }
+}
+
+
+.jumparrow-container{
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 80px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

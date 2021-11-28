@@ -1,0 +1,17 @@
+.page{
+    width: calc(100% - 80px);
+    padding: 40px;
+
+    display: flex;
+}
+
+.landing-page{
+    height: calc(100vh - 80px);
+    justify-content: center;
+    flex-direction: column;
+}
+
+.center-contents{
+justify-content: center;
+align-items: center;
+}

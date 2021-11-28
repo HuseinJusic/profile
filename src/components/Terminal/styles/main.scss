@@ -1,0 +1,113 @@
+@import 'variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+$terminal-main-bg: #070707;
+
+.terminal-wrapper{
+    display: block;
+    width: 800px;
+    height: 400px;
+    padding: 0 8px 8px 8px;
+    background-color: $terminal-main-bg;
+
+    font-family: 'Roboto Mono', monospace;
+
+    border-radius: 10px;
+
+    overflow: scroll;
+
+    .terminal-header{
+        color: white;
+        position: sticky;
+        background-color: black;
+        top: 0;
+
+        height: 30px;
+        width: calc(100% + 16px);
+        margin-left: -8px;
+        margin-top: -20px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        div{
+            width: 12px;
+            height: 12px;
+
+            margin: 0 5px;
+
+            border-radius: 6.5px;
+        }
+
+        .red-knob{
+            margin-left: 12px;
+            background-color: #FF5F57;  
+        }
+
+        .yellow-knob{
+            background-color: #FFBC30;
+        }
+
+        .green-knob{
+            background-color: #28C840;
+        }
+
+        .header-info-text{
+            margin-left: auto;
+            margin-right: 8px;
+            font-size: 8px;
+        }
+    }
+
+    .input-container{
+        color: white;
+        
+         /* These are technically the same, but use both */
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+
+        -ms-word-break: break-all;
+        word-break: break-word;
+
+        /* Adds a hyphen where the word breaks, if supported (No Blink) */
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+
+        input{
+            background-color: #070707;
+            color: white;
+            border: none;
+            outline: none;
+            width: calc(100% - 40px);
+        }
+
+        input:focus{
+            outline: none;
+        }
+    }
+
+    .terminal-result-container{
+        margin-top: 20px;
+        width: 100%;
+        color: white;
+        display: flex;
+        flex-direction: column;
+
+        /* These are technically the same, but use both */
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+
+        -ms-word-break: break-all;
+        word-break: break-word;
+
+        /* Adds a hyphen where the word breaks, if supported (No Blink) */
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+    }
+}
