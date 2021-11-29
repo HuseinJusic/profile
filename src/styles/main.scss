@@ -22,9 +22,17 @@ body{
     display: none !important;
 }
 
+.hide-mobile{
+    display: none !important;
+}
+
 @media (min-width: 880px) {
     .terminal-wrapper{
         display: block !important;
+    }
+
+    .hide-mobile{
+        display: none !important;
     }
    
 }
