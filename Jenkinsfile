@@ -1,7 +1,11 @@
 pipeline {
   agent any
-  imagename = "profile"
+  
   tools {nodejs "Nodejs"}
+
+  environment {
+    imagename = "profile"
+  }
  
   stages {
     stage('Install dependencies') {
