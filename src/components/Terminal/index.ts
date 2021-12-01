@@ -91,14 +91,17 @@ class Terminal{
     keydown = (event: any) => {
         switch(event.keyCode){
             case 13: 
-                this.addTextToResult(this.command);
-                let result = this.fs.translateCommand(this.command);
+                if(this.command !== ''){
+                    this.addTextToResult(this.command);
+                    let result = this.fs.translateCommand(this.command);
 
-                result.forEach(entry => this.addTextToResultWithOutPreset(entry as string));
-                this.command = '';
-                //this.input.value = this.command;
+                    result.forEach(entry => this.addTextToResultWithOutPreset(entry as string));
+                    this.command = '';
+                    //this.input.value = this.command;
 
-                this.inputPointer.innerHTML = this.fs.pointer.name as string + this.logPreset;
+                    this.inputPointer.innerHTML = this.fs.pointer.name as string + this.logPreset;
+                }
+        
                 break;
             case 46:
                 this.command = '';

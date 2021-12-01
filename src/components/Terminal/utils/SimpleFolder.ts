@@ -1,3 +1,4 @@
+import { identity } from "lodash";
 import SimpleFile from "./SimpleFile";
 
 class SimpleFolder {
@@ -16,9 +17,10 @@ class SimpleFolder {
     }
 
     addFile(simpleFile: SimpleFile){
-       this.files.filter(file => file.name != simpleFile.name);
-       if(this.files.filter(file => file.name == simpleFile.name).length < this.files.length || this.files.length == 0){
-        this.files.push(simpleFile);
+       if(simpleFile.name !== null && simpleFile.name.length > 0){
+        if(this.files.filter(file => file.name == simpleFile.name).length < this.files.length || this.files.length == 0){
+            this.files.push(simpleFile);
+           }
        }
     }
 
@@ -27,22 +29,23 @@ class SimpleFolder {
     }
 
     addFolder(simpleFolder: SimpleFolder){
-        this.childFolders.filter(folder => folder.name != simpleFolder.name);
-        if(this.childFolders.filter(folder => folder.name == simpleFolder.name).length < this.childFolders.length || this.childFolders.length == 0){
-            this.childFolders.push(simpleFolder);
+        if(simpleFolder.name !== null && simpleFolder.name.length > 0){
+            if(this.childFolders.filter(folder => folder.name === simpleFolder.name).length < this.childFolders.length || this.childFolders.length === 0){
+                this.childFolders.push(simpleFolder);
+            }
         }
     }
 
     removeFolder(simpleFolder: SimpleFolder){
-        this.childFolders = this.childFolders.filter(folder => folder.name != simpleFolder.name);
+        this.childFolders = this.childFolders.filter(folder => folder.name !== simpleFolder.name);
     }
     
     findChildFolder(name: String){
-        return this.childFolders.filter(folder => folder.name == name)[0];
+        return this.childFolders.filter(folder => folder.name === name)[0];
     }
 
     findChildFile(name: String){
-        return this.files.filter(file => file.name == name)[0];
+        return this.files.filter(file => file.name === name)[0];
     }
 }
 
